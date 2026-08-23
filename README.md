@@ -1,15 +1,9 @@
 # RazorAgent Commerce & Growth Engine (AetherGear Storefront)
 
-[![Track](https://img.shields.io/badge/Razorpay%20AI%20Buildathon-Track%2001-blue)](https://razorpay.com/buildathon/)
-[![Protocol](https://img.shields.io/badge/Protocol-ACP%20%2F%20UAP%20v1.0-emerald)](#protocol-specification)
-[![License](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
-
-> **Track 01 Submission — AI Growth & Agentic Commerce**  
-> *Growing merchant revenue and making merchants fully transactable by AI Buyer Agents over Razorpay APIs.*
 
 ---
 
-## ⚡ Executive Summary
+## Summary
 
 With NPCI's **UAP (Unified Agent Protocol)** and global standards like **ACP (Agentic Commerce Protocol)**, **AP2**, and **x402**, agent-to-agent commerce is the open problem of the year.
 
