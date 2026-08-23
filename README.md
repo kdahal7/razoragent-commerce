@@ -105,9 +105,3 @@ With NPCI's **UAP (Unified Agent Protocol)** and global standards like **ACP (Ag
 
 ---
 
-## 🏆 Razorpay AI Buildathon Submission Details
-
-- **Track:** `01 — AI Growth & Agentic Commerce`
-- **Project Name:** `RazorAgent Commerce & Growth Engine`
-- **Built By:** Kaushal Dahal
-- **Stipend Target:** ₹75,000 Monthly (6/12 Month AI Builder Internship)
