@@ -10,83 +10,126 @@ export default function VideoPitchScriptModal({ isOpen, onClose }) {
   const scriptSections = [
     {
       time: "0:00 - 0:40",
-      title: "1. The Hook & The Problem Taste",
-      dialogue: `"Hi everyone! My name is Kaushal, and today I’m excited to present RazorAgent Commerce — a complete, production-ready Agentic Commerce and Merchant Growth engine built for Track 01 of the Razorpay AI Buildathon.
+      title: "1. The Hook & The Big Picture",
+      dialogue: `"[Warm smile] Hey everyone! My name is Kaushal... and today, I'm really excited to show you RazorAgent Commerce.
 
-We are witnessing a massive shift right now with NPCI's Unified Agent Protocol (UAP) and global agentic standards like ACP, AP2, and x402. Soon, personal AI agents will discover, negotiate, and settle transactions for users.
+This is an end-to-end Agentic Commerce and Merchant Growth engine... built specifically for Track 1 of the Razorpay AI Buildathon.
 
-But here’s the key challenge: How do we make merchants easily sellable to AI buyers and maximize revenue, while guaranteeing that every money action is bounded, explainable, and safe on Razorpay? Let me show you how RazorAgent solves this."`,
+[pause]
+
+Now, we all know payments are changing rapidly right now... with NPCI’s Unified Agent Protocol (UAP)... and global standards like ACP and x402. 
+
+Very soon... we won't just be browsing web pages by hand. Our personal AI agents will discover products... negotiate deals... and pay for us automatically.
+
+But here’s the real challenge: How do we make merchants easily sellable to AI buyers... while making sure every single money action is safe, bounded, and explainable on Razorpay?
+
+Let's dive right in and see how RazorAgent solves this."`,
       demoAction: "Show the clean AetherGear Storefront and point out the top Track 01 Reviewer Quick Flight Bar and header badges."
     },
     {
       time: "0:40 - 1:20",
-      title: "2. Agent-Readable Merchant Catalog & Protocol Manifest",
-      dialogue: `"First, let's look at how our merchant storefront makes itself discoverable to AI buyers. 
+      title: "2. Agent-Readable Catalog & Handshake",
+      dialogue: `"First off... let's talk about discoverability.
 
-Human shoppers see our clean web store, but AI Buyer Agents need structured metadata. 
+As humans... we see this clean, modern storefront. [pause] 
 
-In our top Quick Flight Bar, clicking on '5. ACP Schema' opens our standardized protocol manifest at /.well-known/agentic-commerce.json. 
+But an AI Buyer Agent needs structured, machine-readable data.
 
-It declares our merchant ID, supported protocols, HSN tax codes, negotiation floor price caps, and active Razorpay test API endpoints. Any external AI agent can query this manifest and start transacting in milliseconds."`,
+If I click right here on '5. ACP Schema'... [click]... you'll see our standardized protocol manifest.
+
+It exposes everything an external AI agent needs:
+Our merchant ID... supported protocols... negotiation floor price caps... and our active Razorpay test API endpoints.
+
+[pause]
+
+An external AI agent can query this manifest... understand our store rules... and start transacting in milliseconds."`,
       demoAction: "Click on '5. ACP Schema' in the Quick Flight Bar and show the clean JSON manifest modal."
     },
     {
       time: "1:20 - 2:30",
       title: "3. Autonomous AI Buyer Agent with Bounded Safety Gates",
-      dialogue: `"Now, let me demonstrate our Autonomous AI Buyer Agent in action.
+      dialogue: `"Now... let's see an autonomous AI Buyer Agent actually buy something.
 
-I’ll select a procurement task: 'Find and buy noise-canceling earbuds and a wireless charging dock within a ₹7,000 budget cap.'
+I'll open our AI Buyer... and let's give it a simple task: 
+'Find and buy noise-canceling earbuds and a charging dock... within a ₹7,000 budget cap.'
 
-Notice what happens step by step:
-1. The agent parses intent and queries our ACP catalog.
-2. It evaluates product bounds against both the user's budget cap AND merchant limits.
-3. If spending exceeds our ₹15,000 safety threshold, Step-Up Human Authorization kicks in.
-4. It calls the Razorpay Order API to create a live test order.
+Watch what happens when I click Run... [click]
 
-When I click 'Execute Razorpay Payment', the checkout modal opens, and the payment is captured and verified with instant celebration confetti!"`,
+[pause - 1 sec]
+
+Step 1: The agent searches our ACP catalog.
+Step 2: It calculates the total... ₹5,998... and checks our dual safety gates. It verifies that this amount is strictly under the user's ₹7,000 cap... AND under our merchant's policy limit.
+
+[pause]
+
+And if an order ever exceeds ₹15,000... our Step-Up Human Authorization gate kicks in to prevent runaway spending.
+
+Step 3: It calls the Razorpay Order API... and generates an authentic order ID.
+
+Now... let's click 'Execute Razorpay Payment'... [click]
+The Razorpay checkout modal opens up... I'll select UPI... click Pay... and boom! [smile] Payment captured, signature verified, and celebrated with instant confetti!"`,
       demoAction: "Click '1. AI Buyer' in the Quick Flight Bar, select the preset, run the task, observe 5 phases, then execute the Razorpay payment modal."
     },
     {
       time: "2:30 - 3:20",
-      title: "4. AI Campaign Orchestrator & Revenue Growth",
-      dialogue: `"Next is Merchant Revenue Growth — specifically our AI Campaign Orchestrator, which satisfies one of the core directions of Track 1.
+      title: "4. AI Campaign Orchestrator & Merchant Growth",
+      dialogue: `"Next... let's look at Merchant Revenue Growth... specifically our AI Campaign Orchestrator, which is one of the core directions of Track 1.
 
-Clicking '2. Campaigns' opens our autonomous revenue optimizer. Merchants can choose from high-margin AI strategies, like our Festival Audio Surge Bundle or Abandoned Cart Recovery Booster.
+When I click on Campaigns... [click]... our autonomous growth engine opens up.
 
-The agent enforces policy discount bounds and calculates projected ROI within a bounded ₹5,000 budget. 
+Merchants can launch targeted AI strategies... like this Festival Audio Surge Bundle... or an Abandoned Cart Recovery Booster.
 
-When I click 'Launch', the agent orchestrates the promo code FESTIVAL_AUDIO20 and generates an instant, shareable Razorpay Campaign Payment Link to drive live conversions."`,
+[pause]
+
+Notice how the agent enforces strict discount limits... and stays within a safe, bounded ad budget of ₹5,000.
+
+I'll click 'Launch Autonomous AI Campaign'... [click]
+And look at that! The agent generates a live promo code... estimates reaching over 3,000 users... and creates an instant, shareable Razorpay Campaign Link to drive immediate sales."`,
       demoAction: "Click '2. Campaigns' in the Quick Flight Bar, select Festival Audio Surge Bundle, show bounded ₹5,000 budget, click 'Launch', and show the active Razorpay payment link."
     },
     {
       time: "3:20 - 4:05",
-      title: "5. Conversational In-App Checkout & Dynamic Upsells",
-      dialogue: `"We also built a conversational In-App Checkout & Upsell Agent right inside the store.
+      title: "5. Conversational In-App Checkout & Dynamic Upsell",
+      dialogue: `"We also built an interactive Conversational Checkout Agent right inside the storefront.
 
-In the bottom right, a shopper can chat with our AI Sales Assistant. I'll click our quick suggestion pill: 'Request 15% Discount'.
+Down here in the bottom right... shoppers can chat directly with our AI Sales Assistant.
 
-The agent checks margin limits and grants an authorized 15% bundle deal, bringing the price down to ₹4,249. 
+Let's test dynamic negotiation. I’ll click this quick prompt: 'Request 15% Discount'... [click]
 
-Right in the chat, it generates an in-app Razorpay checkout card. Clicking 'Pay Now' immediately launches the checkout for instant settlement."`,
+The agent checks our profit margins... verifies it has authorization room... and offers an instant 15% bundle deal on our flagship earbuds... dropping the price to ₹4,249.
+
+[pause]
+
+Right inside the conversation... it generates an in-app Razorpay checkout card. One click on 'Pay Now'... and the Razorpay modal opens up immediately for instant checkout."`,
       demoAction: "Click the floating AI Shopping Assistant widget in the bottom right, click 'Request 15% Discount', and show the instant in-app Razorpay checkout card."
     },
     {
       time: "4:05 - 4:40",
-      title: "6. Real-Time Explainability & Graceful Failure Sentinel",
-      dialogue: `"Track 1 demands that every money action be explainable, bounded, and gated, with graceful failure handling.
+      title: "6. Real-Time Explainability & Failure Sentinel",
+      dialogue: `"Now... Track 1 sets a very high bar: Every money action must be bounded, explainable, and handle failures gracefully.
 
-Let's test our Failure Sentinel. What happens if a card gateway declines or times out? In Scenario 1, the agent intercepts the drop, reserves inventory for 10 minutes, and auto-generates a fallback Razorpay UPI Payment Link sent via SMS.
+Let's test our Failure Sentinel... [click]
 
-And in our Telemetry Audit Log, every single event — from discovery to safety checks and API calls — is logged in real time with human-readable explainability traces and exportable JSON payloads."`,
+What happens if a card payment drops due to a bank timeout? 
+
+Let's run Scenario 1: [click]... The agent intercepts the drop... puts a 10-minute hold on the inventory... and auto-routes the buyer to a fallback Razorpay UPI link via SMS. Zero lost sales!
+
+[pause]
+
+And if we check our Telemetry Audit Log... [click]... every single event — from discovery to safety gate checks and Razorpay API calls — is logged in real time. 
+
+Clicking any log gives you clear, explainable reasoning... and raw JSON payloads that you can export with one click."`,
       demoAction: "Click '3. Failure Sentinel' to show Gateway Decline fallback, then click '4. Telemetry' to inspect explainable reasoning and JSON telemetry."
     },
     {
       time: "4:40 - 5:00",
       title: "7. Conclusion & Wrap-Up",
-      dialogue: `"To wrap up: RazorAgent Commerce proves that agent-to-agent commerce on Razorpay APIs can be secure, bounded, explainable, and revenue-maximizing for merchants.
+      dialogue: `"[Confident & warm tone] To wrap up... RazorAgent Commerce proves that agentic commerce on Razorpay APIs can be secure, bounded, explainable, and genuinely revenue-maximizing for merchants.
 
-All code is modular, production-ready, and public on GitHub. Thank you so much for your time, and I'd love to join as a Razorpay AI Builder Intern in 2026!"`,
-      demoAction: "Return to the main storefront homepage, scrolling smoothly across the product showcase."
+The entire project is clean, modular, and available on GitHub.
+
+Thank you so much for watching... and I would love the opportunity to build the future of agentic commerce as a Razorpay AI Builder Intern in 2026!"`,
+      demoAction: "Return to the main storefront homepage, scrolling smoothly down the catalog and back up."
     }
   ];
 
