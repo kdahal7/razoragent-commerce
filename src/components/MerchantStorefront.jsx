@@ -4,7 +4,17 @@ import { PRODUCTS, MERCHANT_INFO } from '../data/mockCatalog';
 import { AgentEngine } from '../services/agentEngine';
 import { createRazorpayOrder } from '../services/razorpayService';
 
-export default function MerchantStorefront({ onCartUpdate, onOpenBuyerModal, onTriggerRazorpay, activeCategory, onSelectCategory }) {
+export default function MerchantStorefront({ 
+  onCartUpdate, 
+  onOpenBuyerModal, 
+  onOpenCampaign, 
+  onOpenFailureSim, 
+  onOpenAudit, 
+  onOpenManifest, 
+  onTriggerRazorpay, 
+  activeCategory, 
+  onSelectCategory 
+}) {
   const [cart, setCart] = useState([]);
   const [growthOffer, setGrowthOffer] = useState(null);
   const [isProcessingCheckout, setIsProcessingCheckout] = useState(false);
@@ -98,10 +108,85 @@ export default function MerchantStorefront({ onCartUpdate, onOpenBuyerModal, onT
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       
+      {/* Reviewer Quick Test Flight Bar */}
+      <div className="rounded-2xl bg-white border border-slate-200/90 p-4 shadow-sm space-y-3">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-2.5">
+          <div className="flex items-center space-x-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-800">
+              Track 01 Reviewer Quick Flight Bar
+            </h3>
+            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">
+              1-Click Demo Launcher
+            </span>
+          </div>
+          <span className="text-[11px] text-slate-500">
+            Click any pillar below to test live interactive features immediately:
+          </span>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+          <button
+            onClick={onOpenBuyerModal}
+            className="p-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 transition text-left space-y-1 cursor-pointer group"
+          >
+            <div className="flex items-center space-x-1.5 font-bold text-xs group-hover:text-blue-700">
+              <Bot className="w-4 h-4 text-blue-600" />
+              <span>1. AI Buyer</span>
+            </div>
+            <p className="text-[10px] text-slate-500 line-clamp-1">Machine procurement & gates</p>
+          </button>
+
+          <button
+            onClick={onOpenCampaign}
+            className="p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition text-left space-y-1 cursor-pointer group"
+          >
+            <div className="flex items-center space-x-1.5 font-bold text-xs group-hover:text-emerald-700">
+              <Sparkles className="w-4 h-4 text-emerald-600" />
+              <span>2. Campaigns</span>
+            </div>
+            <p className="text-[10px] text-slate-500 line-clamp-1">Flash sales & Razorpay links</p>
+          </button>
+
+          <button
+            onClick={onOpenFailureSim}
+            className="p-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition text-left space-y-1 cursor-pointer group"
+          >
+            <div className="flex items-center space-x-1.5 font-bold text-xs group-hover:text-amber-700">
+              <AlertCircle className="w-4 h-4 text-amber-600" />
+              <span>3. Failure Sentinel</span>
+            </div>
+            <p className="text-[10px] text-slate-500 line-clamp-1">Decline fallback to UPI</p>
+          </button>
+
+          <button
+            onClick={onOpenAudit}
+            className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 transition text-left space-y-1 cursor-pointer group"
+          >
+            <div className="flex items-center space-x-1.5 font-bold text-xs group-hover:text-blue-600">
+              <Activity className="w-4 h-4 text-emerald-600" />
+              <span>4. Telemetry</span>
+            </div>
+            <p className="text-[10px] text-slate-500 line-clamp-1">Explainable JSON audit log</p>
+          </button>
+
+          <button
+            onClick={onOpenManifest}
+            className="p-2.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 transition text-left space-y-1 cursor-pointer group col-span-2 sm:col-span-1"
+          >
+            <div className="flex items-center space-x-1.5 font-bold text-xs group-hover:text-purple-700">
+              <Tag className="w-4 h-4 text-purple-600" />
+              <span>5. ACP Schema</span>
+            </div>
+            <p className="text-[10px] text-slate-500 line-clamp-1">Machine-readable manifest</p>
+          </button>
+        </div>
+      </div>
+
       {/* Premium Hero Section */}
-      <div className="relative rounded-3xl bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 p-8 md:p-12 text-white overflow-hidden shadow-2xl">
+      <div className="relative rounded-3xl bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 p-8 md:p-10 text-white overflow-hidden shadow-2xl">
         <div className="absolute top-0 right-0 -mt-16 -mr-16 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 left-1/4 -mb-16 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -113,50 +198,58 @@ export default function MerchantStorefront({ onCartUpdate, onOpenBuyerModal, onT
               <span>FESTIVAL EDITION • UP TO 35% OFF</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white leading-tight">
               Engineering the Future of Sound & Workspaces
             </h1>
 
-            <p className="text-slate-300 text-sm leading-relaxed max-w-xl">
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl">
               Discover flagship audio gear and ergonomic tech. Fully transactable by human shoppers and autonomous AI Buyer Agents over Razorpay APIs.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-medium text-slate-300">
+            <div className="flex flex-wrap items-center gap-3 pt-1 text-xs font-medium text-slate-300">
               <div className="flex items-center space-x-1.5 bg-white/10 px-3 py-1.5 rounded-xl backdrop-blur-md border border-white/10">
-                <Truck className="w-4 h-4 text-emerald-400" />
-                <span>Free Express Shipping</span>
+                <Truck className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Express Shipping</span>
               </div>
               <div className="flex items-center space-x-1.5 bg-white/10 px-3 py-1.5 rounded-xl backdrop-blur-md border border-white/10">
-                <ShieldCheck className="w-4 h-4 text-blue-400" />
-                <span>1-Year Official Warranty</span>
+                <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
+                <span>1-Year Warranty</span>
               </div>
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
                 onClick={onOpenBuyerModal}
-                className="px-6 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm shadow-xl shadow-blue-600/30 transition flex items-center space-x-2.5 border border-blue-400/30 cursor-pointer transform hover:-translate-y-0.5"
+                className="px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-blue-600/30 transition flex items-center space-x-2 border border-blue-400/30 cursor-pointer transform hover:-translate-y-0.5"
               >
-                <Bot className="w-5 h-5 text-white" />
+                <Bot className="w-4 h-4 text-white" />
                 <span>Simulate AI Buyer Procurement</span>
+              </button>
+
+              <button
+                onClick={onOpenCampaign}
+                className="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm backdrop-blur-md transition flex items-center space-x-2 border border-white/20 cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4 text-amber-300" />
+                <span>Launch AI Campaign</span>
               </button>
             </div>
           </div>
 
           {/* Hero Spotlight Product Preview */}
           <div className="lg:col-span-5 hidden lg:block">
-            <div className="relative rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur-md shadow-2xl space-y-3">
+            <div className="relative rounded-2xl bg-white/5 border border-white/10 p-4 backdrop-blur-md shadow-2xl space-y-3">
               <img 
                 src="/images/earbuds.jpg" 
                 alt="AetherPulse Pro"
-                className="w-full h-52 object-cover rounded-xl shadow-lg"
+                className="w-full h-48 object-cover rounded-xl shadow-lg"
               />
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-bold text-blue-300 uppercase tracking-wider">Spotlight Feature</p>
-                  <h4 className="text-sm font-extrabold text-white">AetherPulse Pro Earbuds</h4>
+                  <p className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">Spotlight Feature</p>
+                  <h4 className="text-xs font-extrabold text-white">AetherPulse Pro Earbuds</h4>
                 </div>
-                <span className="text-base font-black text-emerald-400 font-mono">₹4,999</span>
+                <span className="text-sm font-black text-emerald-400 font-mono">₹4,999</span>
               </div>
             </div>
           </div>

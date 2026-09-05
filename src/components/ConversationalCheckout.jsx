@@ -184,7 +184,7 @@ export default function ConversationalCheckout({ onTriggerRazorpay }) {
                 </p>
                 <button
                   onClick={handleInstantCheckout}
-                  className="w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition flex items-center justify-center space-x-1.5 shadow-md"
+                  className="w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition flex items-center justify-center space-x-1.5 shadow-md cursor-pointer"
                 >
                   <span>Pay Now via Razorpay</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -193,18 +193,40 @@ export default function ConversationalCheckout({ onTriggerRazorpay }) {
             )}
           </div>
 
+          {/* Quick Prompt Suggestion Pills */}
+          <div className="px-3 py-2 bg-slate-100/80 border-t border-slate-200 flex items-center gap-1.5 overflow-x-auto text-[10px]">
+            <button
+              onClick={() => { setInput("Can I get a discount on earbuds?"); }}
+              className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-blue-400 text-slate-700 font-semibold whitespace-nowrap cursor-pointer hover:text-blue-600 transition"
+            >
+              🏷️ Request 15% Discount
+            </button>
+            <button
+              onClick={() => { setInput("Recommend best audio gear"); }}
+              className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-blue-400 text-slate-700 font-semibold whitespace-nowrap cursor-pointer hover:text-blue-600 transition"
+            >
+              🎧 Best Audio Gear
+            </button>
+            <button
+              onClick={() => { setInput("Show smartwatch options"); }}
+              className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-blue-400 text-slate-700 font-semibold whitespace-nowrap cursor-pointer hover:text-blue-600 transition"
+            >
+              ⌚ Smartwatch Deals
+            </button>
+          </div>
+
           {/* Input Form */}
           <form onSubmit={handleSend} className="p-3 bg-white border-t border-slate-200 flex gap-2">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask for discount, product recommendation..."
+              placeholder="Ask for discount or recommendation..."
               className="flex-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500"
             />
             <button
               type="submit"
-              className="p-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition flex items-center justify-center"
+              className="p-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition flex items-center justify-center cursor-pointer"
             >
               <Send className="w-4 h-4" />
             </button>

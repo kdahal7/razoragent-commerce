@@ -30,3 +30,8 @@ desktop.ini
 *.njsproj
 *.sln
 *.sw?
+
+# Private Submission & Pitch Files
+VIDEO_PITCH_AND_FORM_GUIDE.md
+pitch_guide.md
+

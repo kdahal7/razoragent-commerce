@@ -7,6 +7,7 @@ import AuditTrailPanel from './components/AuditTrailPanel';
 import FailureSimulator from './components/FailureSimulator';
 import ProtocolManifestModal from './components/ProtocolManifestModal';
 import RazorpayCheckoutModal from './components/RazorpayCheckoutModal';
+import CampaignOrchestratorModal from './components/CampaignOrchestratorModal';
 import { auditLogger } from './services/auditLogger';
 import { ShieldCheck } from 'lucide-react';
 
@@ -15,6 +16,7 @@ export default function App() {
   const [isAuditOpen, setIsAuditOpen] = useState(false);
   const [isFailureSimOpen, setIsFailureSimOpen] = useState(false);
   const [isManifestOpen, setIsManifestOpen] = useState(false);
+  const [isCampaignOpen, setIsCampaignOpen] = useState(false);
   const [auditLogs, setAuditLogs] = useState([]);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [activeCategory, setActiveCategory] = useState('ALL');
@@ -48,6 +50,7 @@ export default function App() {
           onOpenAudit={() => setIsAuditOpen(true)}
           onOpenFailureSim={() => setIsFailureSimOpen(true)}
           onOpenManifest={() => setIsManifestOpen(true)}
+          onOpenCampaign={() => setIsCampaignOpen(true)}
           auditCount={auditLogs.length}
           cartCount={cartItemsCount}
           activeCategory={activeCategory}
@@ -58,6 +61,10 @@ export default function App() {
         <main className="pb-16">
           <MerchantStorefront 
             onOpenBuyerModal={() => setIsBuyerModalOpen(true)}
+            onOpenCampaign={() => setIsCampaignOpen(true)}
+            onOpenFailureSim={() => setIsFailureSimOpen(true)}
+            onOpenAudit={() => setIsAuditOpen(true)}
+            onOpenManifest={() => setIsManifestOpen(true)}
             onCartUpdate={(cart) => setCartItemsCount(cart.reduce((a, b) => a + b.quantity, 0))}
             onTriggerRazorpay={(checkoutData) => setRazorpayModalData(checkoutData)}
             activeCategory={activeCategory}
@@ -76,6 +83,11 @@ export default function App() {
         isOpen={isBuyerModalOpen}
         onClose={() => setIsBuyerModalOpen(false)}
         onTriggerRazorpay={(checkoutData) => setRazorpayModalData(checkoutData)}
+      />
+
+      <CampaignOrchestratorModal
+        isOpen={isCampaignOpen}
+        onClose={() => setIsCampaignOpen(false)}
       />
 
       <AuditTrailPanel 

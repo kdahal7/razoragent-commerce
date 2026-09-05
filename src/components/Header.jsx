@@ -6,6 +6,7 @@ export default function Header({
   onOpenAudit, 
   onOpenFailureSim, 
   onOpenManifest,
+  onOpenCampaign,
   auditCount,
   cartCount,
   activeCategory,
@@ -31,8 +32,8 @@ export default function Header({
 
         <div className="flex items-center space-x-2 mx-auto md:mx-0">
           <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-          <span className="font-semibold text-white">Festival Sale Live: Express 24h Delivery Across India</span>
-          <span className="hidden sm:inline text-slate-400 font-mono">• Code: RAZOR10</span>
+          <span className="font-semibold text-white">Track 01: AI Growth & Agentic Commerce Engine</span>
+          <span className="hidden sm:inline text-slate-400 font-mono">• Test Mode Active</span>
         </div>
 
         <div className="hidden lg:flex items-center space-x-3 text-slate-400">
@@ -47,7 +48,7 @@ export default function Header({
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
-        <div className="flex items-center justify-between gap-6">
+        <div className="flex items-center justify-between gap-4">
           
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => onSelectCategory && onSelectCategory('ALL')}>
@@ -65,25 +66,34 @@ export default function Header({
           </div>
 
           {/* Search Bar */}
-          <div className="hidden md:flex items-center flex-1 max-w-md relative">
+          <div className="hidden lg:flex items-center flex-1 max-w-sm relative">
             <Search className="w-4 h-4 text-slate-400 absolute left-4 top-3" />
             <input
               type="text"
-              placeholder="Search earbuds, smartwatches, chargers..."
+              placeholder="Search products..."
               className="w-full pl-11 pr-4 py-2.5 rounded-2xl bg-slate-100 border border-slate-200/80 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
             />
           </div>
 
           {/* Header Action Buttons */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-2.5">
             
             {/* AI Buyer Agent Launcher */}
             <button
               onClick={onOpenBuyerModal}
-              className="px-4 py-2 text-xs font-bold rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-md shadow-blue-600/20 transition flex items-center space-x-2 border border-blue-500/20 cursor-pointer transform hover:-translate-y-0.5"
+              className="px-3.5 py-2 text-xs font-bold rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-md shadow-blue-600/20 transition flex items-center space-x-1.5 border border-blue-500/20 cursor-pointer transform hover:-translate-y-0.5"
             >
               <Bot className="w-4 h-4 text-blue-100" />
               <span>AI Buyer Agent</span>
+            </button>
+
+            {/* Campaign Orchestrator */}
+            <button
+              onClick={onOpenCampaign}
+              className="px-3 py-2 text-xs font-semibold rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition flex items-center space-x-1.5 cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="hidden sm:inline">Campaigns</span>
             </button>
 
             {/* Edge-Case Sentinel */}
